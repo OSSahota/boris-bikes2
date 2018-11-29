@@ -6,7 +6,15 @@ describe Dockingstation do
 
   it "releases the bike" do
   	bike = Bike.new
-  	expect(bike).to be_working
+    expect(bike).to be_working
+  end
+
+  it "releases bike and raises error" do
+  	bike = Bike.new
+    # subject.dock(bike)
+  	# expect(subject.release_bike).to eq bike
+
+    expect{ subject.release_bike }.to raise_error "No bikes to release"
   end
 
   # Check to see if Dockingstation.dock method exists/responds
